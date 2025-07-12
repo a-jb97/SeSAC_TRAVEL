@@ -17,13 +17,15 @@ class TravelTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        photoImageView.clipsToBounds = true
         photoImageView.contentMode = .scaleAspectFill
         photoImageView.layer.cornerRadius = 15
+        
         titleLabel.font = UIFont.boldSystemFont(ofSize: 25)
         titleLabel.numberOfLines = 3
+        
         subtitleLabel.font = UIFont.systemFont(ofSize: 17)
         subtitleLabel.textColor = .systemGray2
+        
         dateLabel.font = UIFont.systemFont(ofSize: 15)
         dateLabel.textAlignment = .right
         dateLabel.textColor = .systemGray2

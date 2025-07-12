@@ -26,14 +26,17 @@ class TravelTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "travelCell", for: indexPath) as! TravelTableViewCell
         
-        let dateformat = DateFormatter()
-        dateformat.dateFormat = "yy년 MM월 dd일"
-        let date = dateformat.date(from: magazineInfo.magazine[indexPath.row].date)
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "yyMMdd"
+        let date = dateFormat.date(from: magazineInfo.magazine[indexPath.row].date)
+        
+        let myDateFormat = DateFormatter()
+        myDateFormat.dateFormat = "yy년 MM월 dd일"
         
         cell.photoImageView.kf.setImage(with: URL(string: magazineInfo.magazine[indexPath.row].photo_image))
         cell.titleLabel.text = magazineInfo.magazine[indexPath.row].title
         cell.subtitleLabel.text = magazineInfo.magazine[indexPath.row].subtitle
-        cell.dateLabel.text = dateformat.string(from: date ?? Date())
+        cell.dateLabel.text = myDateFormat.string(from: date!)
         
         return cell
     }
