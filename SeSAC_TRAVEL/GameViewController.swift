@@ -70,6 +70,8 @@ class GameViewController: UIViewController {
         } else {
             maxNumberTextField.text = nil
             maxNumberTextField.attributedPlaceholder = NSAttributedString(string: "숫자만 입력해주세요!", attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+            gameTextView.text = nil
+            resultLabel.text = nil
         }
     }
     

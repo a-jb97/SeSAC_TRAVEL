@@ -189,7 +189,7 @@
             </objects>
             <point key="canvasLocation" x="-31.343283582089551" y="333.63844393592677"/>
         </scene>
-        <!--Title-->
+        <!--도시 정보-->
         <scene sceneID="OEY-CV-Azd">
             <objects>
                 <tableViewController id="6B4-Hn-E5D" customClass="TravelInfoTableViewController" customModule="SeSAC_TRAVEL" customModuleProvider="target" sceneMemberID="viewController">
@@ -197,28 +197,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="N1Q-7i-3HN">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="도시 상세 정보" id="JQT-KG-Z1F"/>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityInfo" rowHeight="167" id="Ktj-Wi-JdR" customClass="TravelInfoTableViewCell" customModule="SeSAC_TRAVEL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="167"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ktj-Wi-JdR" id="1z8-ay-jvj">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="167"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lF-CP-pvn">
-                                            <rect key="frame" x="16.000000000000004" y="8" width="41.333333333333343" height="21"/>
+                                            <rect key="frame" x="16" y="24" width="243" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMi-ol-RcJ">
-                                            <rect key="frame" x="16" y="37" width="235" height="21"/>
+                                            <rect key="frame" x="16" y="45" width="235" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jx0-1O-uwA">
-                                            <rect key="frame" x="16" y="66" width="209" height="21"/>
+                                            <rect key="frame" x="16" y="74" width="209" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -229,24 +236,37 @@
                                                 <constraint firstAttribute="width" constant="102" id="AKx-8L-M5t"/>
                                             </constraints>
                                         </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Og9-mr-C4j">
+                                            <rect key="frame" x="342" y="16" width="35" height="35"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="35" id="auK-ak-FSi"/>
+                                                <constraint firstAttribute="height" constant="35" id="uyt-MG-R43"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title=""/>
+                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Og9-mr-C4j" secondAttribute="trailing" constant="16" id="6SR-AL-7p9"/>
+                                        <constraint firstItem="Og9-mr-C4j" firstAttribute="top" secondItem="1z8-ay-jvj" secondAttribute="top" constant="16" id="Bnr-ZK-AiU"/>
                                         <constraint firstItem="NG7-81-EOT" firstAttribute="centerY" secondItem="1z8-ay-jvj" secondAttribute="centerY" id="Fi9-cc-DQi"/>
                                         <constraint firstItem="jx0-1O-uwA" firstAttribute="top" secondItem="lMi-ol-RcJ" secondAttribute="bottom" constant="8" id="HQo-uM-H5u"/>
-                                        <constraint firstItem="5lF-CP-pvn" firstAttribute="top" secondItem="1z8-ay-jvj" secondAttribute="top" constant="8" id="QmS-tA-1Z3"/>
+                                        <constraint firstItem="5lF-CP-pvn" firstAttribute="top" secondItem="1z8-ay-jvj" secondAttribute="top" constant="24" id="QmS-tA-1Z3"/>
                                         <constraint firstItem="NG7-81-EOT" firstAttribute="top" secondItem="1z8-ay-jvj" secondAttribute="top" constant="16" id="TJI-t9-EaL"/>
                                         <constraint firstItem="NG7-81-EOT" firstAttribute="leading" secondItem="lMi-ol-RcJ" secondAttribute="trailing" constant="24" id="bYZ-Fi-gSF"/>
                                         <constraint firstItem="jx0-1O-uwA" firstAttribute="leading" secondItem="1z8-ay-jvj" secondAttribute="leading" constant="16" id="cop-ze-TSX"/>
                                         <constraint firstItem="NG7-81-EOT" firstAttribute="leading" secondItem="jx0-1O-uwA" secondAttribute="trailing" constant="50" id="cq3-Fg-DM6"/>
                                         <constraint firstAttribute="trailing" secondItem="NG7-81-EOT" secondAttribute="trailing" constant="16" id="eOg-on-Cod"/>
                                         <constraint firstAttribute="bottom" secondItem="NG7-81-EOT" secondAttribute="bottom" constant="16" id="iy0-vD-xtL"/>
+                                        <constraint firstItem="NG7-81-EOT" firstAttribute="leading" secondItem="5lF-CP-pvn" secondAttribute="trailing" constant="16" id="jfH-Bl-LCa"/>
                                         <constraint firstItem="5lF-CP-pvn" firstAttribute="leading" secondItem="1z8-ay-jvj" secondAttribute="leading" constant="16" id="mvd-9j-zZV"/>
-                                        <constraint firstItem="lMi-ol-RcJ" firstAttribute="top" secondItem="5lF-CP-pvn" secondAttribute="bottom" constant="8" id="uKZ-AE-a7W"/>
+                                        <constraint firstItem="lMi-ol-RcJ" firstAttribute="top" secondItem="5lF-CP-pvn" secondAttribute="bottom" id="uKZ-AE-a7W"/>
                                         <constraint firstItem="lMi-ol-RcJ" firstAttribute="leading" secondItem="1z8-ay-jvj" secondAttribute="leading" constant="16" id="vwZ-rB-cee"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="descriptionLabel" destination="lMi-ol-RcJ" id="mqt-84-zpF"/>
+                                    <outlet property="likeButton" destination="Og9-mr-C4j" id="koi-X1-p59"/>
                                     <outlet property="rateSaveLabel" destination="jx0-1O-uwA" id="pu5-HZ-dDI"/>
                                     <outlet property="titleLabel" destination="5lF-CP-pvn" id="G19-24-kNw"/>
                                     <outlet property="travelImage" destination="NG7-81-EOT" id="Icx-go-4O7"/>
@@ -259,7 +279,6 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="도시 정보" image="info.circle" catalog="system" id="d7X-UV-SF2"/>
-                    <navigationItem key="navigationItem" title="Title" id="qvw-li-g5g"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNo-Kb-k7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -289,6 +308,7 @@
     <resources>
         <image name="airplane.circle" catalog="system" width="128" height="123"/>
         <image name="gamecontroller" catalog="system" width="128" height="79"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
         <image name="info.circle" catalog="system" width="128" height="123"/>
         <namedColor name="AccentColor">
             <color red="0.072999998927116394" green="0.30199998617172241" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
