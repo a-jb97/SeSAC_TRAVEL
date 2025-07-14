@@ -64,14 +64,12 @@ class GameViewController: UIViewController {
             for i in 0..<stringNumberList.count {
                 for j in 0..<clapNumbers.count {
                     if stringNumberList[i].contains(clapNumbers[j]) {
-                        stringNumberList[i] = "👏"
+                        stringNumberList[i] = stringNumberList[i].replacingOccurrences(of: clapNumbers[j], with: "👏")
                         claplist.append(stringNumberList[i])
                     }
                 }
             }
-            
             gameTextView.text = stringNumberList.joined(separator: ", ")
-            
             
             resultLabel.text = "숫자 \(maxNumberTextField.text!)까지 총 박수는 \(claplist.count)번 입니다."
             
