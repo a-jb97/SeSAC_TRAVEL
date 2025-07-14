@@ -24,34 +24,51 @@ class TravelInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cityInfo", for: indexPath) as! TravelInfoTableViewCell
-        
-        cell.titleLabel.text = travelInfo.travel[indexPath.row].title
-        cell.descriptionLabel.text = travelInfo.travel[indexPath.row].description
-        cell.rateSaveLabel.text = "\(convertGradeToStar(indexPath: indexPath)) · 저장 \(numberFormatter.string(for: travelInfo.travel[indexPath.row].save ?? 0)!)"
-        cell.travelImage.kf.setImage(with: URL(string: travelInfo.travel[indexPath.row].travel_image ?? "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"))
-        
-        cell.likeButton.tag = indexPath.row
-        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped(sender:)), for: .touchUpInside)
-        
-        if travelInfo.travel[indexPath.row].like == true {
-            cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-            cell.likeButton.tintColor = .red
+        if indexPath.row % 4 == 0 {
+            
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "TravelAdTableViewCell", for: indexPath) as! TravelAdTableViewCell
+            
+            return cell2
         } else {
-            cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
-            cell.likeButton.tintColor = .white
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cityInfo", for: indexPath) as! TravelInfoTableViewCell
+            
+            cell.titleLabel.text = travelInfo.travel[indexPath.row].title
+            cell.descriptionLabel.text = travelInfo.travel[indexPath.row].description
+            cell.rateSaveLabel.text = "\(convertGradeToStar(indexPath: indexPath)) · 저장 \(numberFormatter.string(for: travelInfo.travel[indexPath.row].save ?? 0)!)"
+            cell.travelImage.kf.setImage(with: URL(string: travelInfo.travel[indexPath.row].travel_image ?? "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1665px-No-Image-Placeholder.svg.png"))
+            
+            cell.likeButton.tag = indexPath.row
+            cell.likeButton.addTarget(self, action: #selector(likeButtonTapped(sender:)), for: .touchUpInside)
+            
+            if travelInfo.travel[indexPath.row].like == true {
+                cell.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                cell.likeButton.tintColor = .red
+            } else {
+                cell.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                cell.likeButton.tintColor = .white
+            }
+            
+            return cell
         }
-        
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        if indexPath.row % 4 == 0 {
+            return UITableView.automaticDimension
+        } else {
+            return 170
+        }
     }
     
     @objc func likeButtonTapped(sender: UIButton) {
         travelInfo.travel[sender.tag].like?.toggle()
-        tableView.reloadData()
+        if travelInfo.travel[sender.tag].like == true {
+            sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+            sender.tintColor = .red
+        } else {
+            sender.setImage(UIImage(systemName: "heart"), for: .normal)
+            sender.tintColor = .white
+        }
     }
     
     func convertGradeToStar(indexPath: IndexPath) -> String {

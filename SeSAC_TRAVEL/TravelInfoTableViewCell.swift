@@ -19,10 +19,11 @@ class TravelInfoTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20)
-        titleLabel.numberOfLines = 3
+        titleLabel.numberOfLines = 0
         descriptionLabel.textColor = .gray
-        descriptionLabel.numberOfLines = 2
+        descriptionLabel.numberOfLines = 0
         rateSaveLabel.textColor = .gray
+        rateSaveLabel.numberOfLines = 0
         travelImage.contentMode = .scaleAspectFill
         travelImage.layer.cornerRadius = 10
         likeButton.tintColor = .white
