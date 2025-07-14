@@ -39,10 +39,18 @@ class GameViewController: UIViewController {
     }
 
     @IBAction func maxNumberTextFieldDidEndOnExit(_ sender: UITextField) {
-        
+        gameLogic()
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
+        gameLogic()
+    }
+    
+    @IBAction func viewDidTapped(_ sender: UITapGestureRecognizer) {
+        tappableView.endEditing(true)
+    }
+    
+    func gameLogic() {
         stringNumberList.removeAll()
         
         let clapNumbers: [String] = ["3", "6", "9"]
@@ -74,9 +82,4 @@ class GameViewController: UIViewController {
             resultLabel.text = nil
         }
     }
-    
-    @IBAction func viewDidTapped(_ sender: UITapGestureRecognizer) {
-        tappableView.endEditing(true)
-    }
-    
 }
