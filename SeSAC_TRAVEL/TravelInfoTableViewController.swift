@@ -8,6 +8,7 @@
 import UIKit
 import Kingfisher
 
+// 피드백 : 이미지 다운샘플링, 리팩토링, 문자열 상수화, 함수 위치 고민, 중복코드 병합(가독성 향상)
 class TravelInfoTableViewController: UITableViewController {
     
     var travelInfo: TravelInfo = TravelInfo()
@@ -24,11 +25,13 @@ class TravelInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.row % 4 == 0 {
+        let travelInfos = travelInfo.travel[indexPath.row]
+        
+        if travelInfos.ad == true {
+            let adCell = tableView.dequeueReusableCell(withIdentifier: "TravelAdTableViewCell", for: indexPath) as! TravelAdTableViewCell
             
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: "TravelAdTableViewCell", for: indexPath) as! TravelAdTableViewCell
             
-            return cell2
+            return adCell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cityInfo", for: indexPath) as! TravelInfoTableViewCell
             
@@ -53,10 +56,27 @@ class TravelInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.row % 4 == 0 {
+        if travelInfo.travel[indexPath.row].ad == true {
             return UITableView.automaticDimension
         } else {
             return 170
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if travelInfo.travel[indexPath.row].ad == false {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "TravelDetailViewController") as! TravelDetailViewController
+            
+            navigationController?.pushViewController(viewController, animated: true)
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
+            let navigationView = UINavigationController(rootViewController: viewController)
+            
+            navigationView.modalPresentationStyle = .fullScreen
+            present(navigationView, animated: true)
         }
     }
     
