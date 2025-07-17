@@ -7,6 +7,7 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -462,10 +463,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="PgK-ZM-CFm">
-                                <rect key="frame" x="16" y="189" width="361" height="546"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-Wq-Xqu">
                                 <rect key="frame" x="0.0" y="74" width="393" height="44"/>
                                 <items>
@@ -480,28 +477,45 @@
                                     <segment title="해외"/>
                                 </segments>
                             </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s6T-Pk-wJQ">
+                                <rect key="frame" x="16" y="181" width="361" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yCg-qq-t57">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0sr-rr-puu">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gQZ-ee-SIT">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g3S-ZV-MFI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="13Y-1V-VeS" secondAttribute="trailing" constant="16" id="1bI-pT-K50"/>
-                            <constraint firstItem="PgK-ZM-CFm" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="FDw-MP-xr4"/>
-                            <constraint firstItem="PgK-ZM-CFm" firstAttribute="top" secondItem="13Y-1V-VeS" secondAttribute="bottom" constant="16" id="KSY-8D-DLf"/>
                             <constraint firstItem="13Y-1V-VeS" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="MNq-nu-Myw"/>
-                            <constraint firstItem="PgK-ZM-CFm" firstAttribute="bottom" secondItem="g3S-ZV-MFI" secondAttribute="bottom" id="T6i-UD-dKk"/>
                             <constraint firstAttribute="trailing" secondItem="fKp-Wq-Xqu" secondAttribute="trailing" id="Tc2-aV-EBe"/>
                             <constraint firstItem="13Y-1V-VeS" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="YUG-vV-yli"/>
                             <constraint firstItem="13Y-1V-VeS" firstAttribute="top" secondItem="fKp-Wq-Xqu" secondAttribute="bottom" constant="24" id="bIB-kh-w86"/>
                             <constraint firstItem="fKp-Wq-Xqu" firstAttribute="top" secondItem="Rgn-eE-xDH" secondAttribute="top" constant="74" id="nsC-Gq-3X7"/>
                             <constraint firstItem="fKp-Wq-Xqu" firstAttribute="leading" secondItem="Rgn-eE-xDH" secondAttribute="leading" id="td6-1F-zbY"/>
                             <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="13Y-1V-VeS" secondAttribute="trailing" constant="16" id="vlM-yC-ct3"/>
-                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="PgK-ZM-CFm" secondAttribute="trailing" constant="16" id="whZ-bO-l0z"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="인기 도시" image="magnifyingglass.circle" catalog="system" id="vlV-w0-ZBt"/>
                     <connections>
                         <outlet property="citySortSegment" destination="13Y-1V-VeS" id="MZu-Ir-5Sm"/>
-                        <outlet property="popularCityTableView" destination="PgK-ZM-CFm" id="e3Z-SS-uah"/>
+                        <outlet property="popularCityCollectionView" destination="s6T-Pk-wJQ" id="Jze-tM-Pxy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eed-ig-Lbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
