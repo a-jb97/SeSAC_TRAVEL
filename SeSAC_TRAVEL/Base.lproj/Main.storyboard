@@ -191,7 +191,7 @@
             </objects>
             <point key="canvasLocation" x="-31.343283582089551" y="333.63844393592677"/>
         </scene>
-        <!--도시 정보-->
+        <!--도시 상세 정보-->
         <scene sceneID="OEY-CV-Azd">
             <objects>
                 <tableViewController storyboardIdentifier="TravelInfoTableViewController" id="6B4-Hn-E5D" customClass="TravelInfoTableViewController" customModule="SeSAC_TRAVEL" customModuleProvider="target" sceneMemberID="viewController">
@@ -199,16 +199,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="N1Q-7i-3HN">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="도시 상세 정보" id="JQT-KG-Z1F"/>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityInfo" rowHeight="167" id="Ktj-Wi-JdR" customClass="TravelInfoTableViewCell" customModule="SeSAC_TRAVEL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="393" height="167"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="167"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ktj-Wi-JdR" id="1z8-ay-jvj">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="167"/>
@@ -274,7 +267,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TravelAdTableViewCell" rowHeight="110" id="YBL-ef-0d7" customClass="TravelAdTableViewCell" customModule="SeSAC_TRAVEL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="261" width="393" height="110"/>
+                                <rect key="frame" x="0.0" y="217" width="393" height="110"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YBL-ef-0d7" id="zib-Zl-dHv">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="110"/>
@@ -315,7 +308,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="도시 정보" image="info.circle" catalog="system" id="d7X-UV-SF2"/>
-                    <navigationItem key="navigationItem" id="98i-HU-PDP"/>
+                    <navigationItem key="navigationItem" title="도시 상세 정보" id="98i-HU-PDP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNo-Kb-k7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -406,7 +399,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wTn-xo-ZKn">
-                                <rect key="frame" x="0.0" y="74" width="393" height="44"/>
+                                <rect key="frame" x="0.0" y="118" width="393" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="광고 화면" id="a3U-XF-V9O">
@@ -463,23 +456,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-Wq-Xqu">
-                                <rect key="frame" x="0.0" y="74" width="393" height="44"/>
-                                <items>
-                                    <navigationItem title="인기 도시" id="KjU-OG-VAo"/>
-                                </items>
-                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="13Y-1V-VeS">
-                                <rect key="frame" x="16" y="142" width="361" height="32"/>
+                                <rect key="frame" x="16" y="138" width="361" height="32"/>
                                 <segments>
                                     <segment title="모두"/>
                                     <segment title="국내"/>
                                     <segment title="해외"/>
                                 </segments>
                             </segmentedControl>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s6T-Pk-wJQ">
-                                <rect key="frame" x="16" y="181" width="361" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s6T-Pk-wJQ">
+                                <rect key="frame" x="16" y="185" width="361" height="550"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yCg-qq-t57">
                                     <size key="itemSize" width="128" height="128"/>
@@ -503,12 +489,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="13Y-1V-VeS" secondAttribute="trailing" constant="16" id="1bI-pT-K50"/>
+                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="bottom" secondItem="g3S-ZV-MFI" secondAttribute="bottom" id="Cpq-aj-k0q"/>
+                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="s6T-Pk-wJQ" secondAttribute="trailing" constant="16" id="Hqn-U0-cPQ"/>
                             <constraint firstItem="13Y-1V-VeS" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="MNq-nu-Myw"/>
-                            <constraint firstAttribute="trailing" secondItem="fKp-Wq-Xqu" secondAttribute="trailing" id="Tc2-aV-EBe"/>
+                            <constraint firstItem="13Y-1V-VeS" firstAttribute="top" secondItem="g3S-ZV-MFI" secondAttribute="top" constant="20" id="UxA-Kc-Wa3"/>
                             <constraint firstItem="13Y-1V-VeS" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="YUG-vV-yli"/>
-                            <constraint firstItem="13Y-1V-VeS" firstAttribute="top" secondItem="fKp-Wq-Xqu" secondAttribute="bottom" constant="24" id="bIB-kh-w86"/>
-                            <constraint firstItem="fKp-Wq-Xqu" firstAttribute="top" secondItem="Rgn-eE-xDH" secondAttribute="top" constant="74" id="nsC-Gq-3X7"/>
-                            <constraint firstItem="fKp-Wq-Xqu" firstAttribute="leading" secondItem="Rgn-eE-xDH" secondAttribute="leading" id="td6-1F-zbY"/>
+                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="YnI-jf-fpZ"/>
+                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="top" secondItem="13Y-1V-VeS" secondAttribute="bottom" constant="16" id="e6P-HO-r4V"/>
                             <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="13Y-1V-VeS" secondAttribute="trailing" constant="16" id="vlM-yC-ct3"/>
                         </constraints>
                     </view>

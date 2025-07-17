@@ -8,12 +8,16 @@
 import UIKit
 import Kingfisher
 
-// 피드백 : 이미지 다운샘플링, 리팩토링, 문자열 상수화, 함수 위치 고민, 중복코드 병합(가독성 향상)
+// 피드백 : 이미지 다운샘플링, 리팩토링, 함수 위치 고민, 중복코드 병합(가독성 향상)
 class TravelInfoTableViewController: UITableViewController {
     
     var travelInfo: TravelInfo = TravelInfo()
     var adInfo: String? = AdInfo().adInfoList.randomElement()
     let numberFormatter: NumberFormatter = NumberFormatter()
+    let travelAdTableViewIdentifier = "TravelAdTableViewCell"
+    let travelDetailViewIdentifier = "TravelDetailViewController"
+    let adDetailViewIdentifier = "AdDetailViewController"
+    let cityInfoIdentifier = "cityInfo"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +31,13 @@ class TravelInfoTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if travelInfo.travel[indexPath.row].ad == true {
-            let adCell = tableView.dequeueReusableCell(withIdentifier: "TravelAdTableViewCell", for: indexPath) as! TravelAdTableViewCell
+            let adCell = tableView.dequeueReusableCell(withIdentifier: travelAdTableViewIdentifier, for: indexPath) as! TravelAdTableViewCell
             
             adCell.adInfoLabel.text = adInfo
             
             return adCell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cityInfo", for: indexPath) as! TravelInfoTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: cityInfoIdentifier, for: indexPath) as! TravelInfoTableViewCell
             
             cell.titleLabel.text = travelInfo.travel[indexPath.row].title
             cell.descriptionLabel.text = travelInfo.travel[indexPath.row].description
@@ -67,7 +71,7 @@ class TravelInfoTableViewController: UITableViewController {
         
         if travelInfo.travel[indexPath.row].ad == false {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "TravelDetailViewController") as! TravelDetailViewController
+            let viewController = storyboard.instantiateViewController(withIdentifier: travelDetailViewIdentifier) as! TravelDetailViewController
             
             viewController.siteImage = travelInfo.travel[indexPath.row].travel_image ?? "이미지 없음"
             viewController.siteLabel = travelInfo.travel[indexPath.row].title
@@ -76,7 +80,7 @@ class TravelInfoTableViewController: UITableViewController {
             navigationController?.pushViewController(viewController, animated: true)
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = storyboard.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
+            let viewController = storyboard.instantiateViewController(withIdentifier: adDetailViewIdentifier) as! AdDetailViewController
             let navigationView = UINavigationController(rootViewController: viewController)
             
             viewController.adDescription = adInfo

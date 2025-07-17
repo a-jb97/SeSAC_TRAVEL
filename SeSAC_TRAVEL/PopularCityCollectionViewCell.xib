@@ -10,32 +10,53 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularCityCollectionViewCell" id="gTV-IL-0wX" customClass="PopularCityCollectionViewCell" customModule="SeSAC_TRAVEL" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+            <rect key="frame" x="0.0" y="0.0" width="140" height="210"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                <rect key="frame" x="0.0" y="0.0" width="140" height="210"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YT6-LV-0bn">
                         <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="YT6-LV-0bn" secondAttribute="height" multiplier="1:1" id="ctU-eQ-8Ad"/>
+                            <constraint firstAttribute="height" constant="140" id="FNr-sE-HzB"/>
+                            <constraint firstAttribute="width" secondItem="YT6-LV-0bn" secondAttribute="height" multiplier="1:1" id="Ytj-9Z-37s"/>
+                            <constraint firstAttribute="width" constant="140" id="aGE-9H-4ZR"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UWc-h1-yZT">
+                        <rect key="frame" x="0.0" y="156" width="140" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9WA-xg-lJi">
+                        <rect key="frame" x="0.0" y="185" width="140" height="20.333333333333343"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="YT6-LV-0bn" secondAttribute="trailing" id="ERY-J8-8HL"/>
-                <constraint firstItem="YT6-LV-0bn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GG0-ty-JSW"/>
-                <constraint firstAttribute="bottom" secondItem="YT6-LV-0bn" secondAttribute="bottom" id="fLW-Ux-A5t"/>
-                <constraint firstItem="YT6-LV-0bn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="xpU-7w-9ng"/>
+                <constraint firstItem="9WA-xg-lJi" firstAttribute="top" secondItem="UWc-h1-yZT" secondAttribute="bottom" constant="8" id="5zR-UC-dNd"/>
+                <constraint firstItem="UWc-h1-yZT" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="I2F-Kf-sgP"/>
+                <constraint firstAttribute="trailing" secondItem="9WA-xg-lJi" secondAttribute="trailing" id="R63-fX-SPs"/>
+                <constraint firstItem="UWc-h1-yZT" firstAttribute="top" secondItem="YT6-LV-0bn" secondAttribute="bottom" constant="16" id="ZSP-56-G5y"/>
+                <constraint firstAttribute="trailing" secondItem="UWc-h1-yZT" secondAttribute="trailing" id="Zrk-25-Ikb"/>
+                <constraint firstItem="YT6-LV-0bn" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="dVr-LE-OIs"/>
+                <constraint firstAttribute="trailing" secondItem="YT6-LV-0bn" secondAttribute="trailing" id="o6I-EB-m53"/>
+                <constraint firstItem="YT6-LV-0bn" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="qfK-Jn-1zb"/>
+                <constraint firstItem="9WA-xg-lJi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="y1D-1J-LSe"/>
             </constraints>
-            <size key="customSize" width="140" height="140"/>
+            <size key="customSize" width="140" height="210"/>
             <connections>
+                <outlet property="cityExplain" destination="9WA-xg-lJi" id="42f-sX-30J"/>
                 <outlet property="cityImageView" destination="YT6-LV-0bn" id="4oh-Tx-hBb"/>
+                <outlet property="cityName" destination="UWc-h1-yZT" id="asC-I7-ED6"/>
             </connections>
-            <point key="canvasLocation" x="207.63358778625954" y="51.408450704225352"/>
+            <point key="canvasLocation" x="207.63358778625954" y="73.943661971830991"/>
         </collectionViewCell>
     </objects>
 </document>
