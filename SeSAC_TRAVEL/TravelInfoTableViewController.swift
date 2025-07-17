@@ -12,6 +12,7 @@ import Kingfisher
 class TravelInfoTableViewController: UITableViewController {
     
     var travelInfo: TravelInfo = TravelInfo()
+    var adInfo: String? = AdInfo().adInfoList.randomElement()
     let numberFormatter: NumberFormatter = NumberFormatter()
     
     override func viewDidLoad() {
@@ -25,11 +26,10 @@ class TravelInfoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let travelInfos = travelInfo.travel[indexPath.row]
-        
-        if travelInfos.ad == true {
+        if travelInfo.travel[indexPath.row].ad == true {
             let adCell = tableView.dequeueReusableCell(withIdentifier: "TravelAdTableViewCell", for: indexPath) as! TravelAdTableViewCell
             
+            adCell.adInfoLabel.text = adInfo
             
             return adCell
         } else {
@@ -69,11 +69,17 @@ class TravelInfoTableViewController: UITableViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "TravelDetailViewController") as! TravelDetailViewController
             
+            viewController.siteImage = travelInfo.travel[indexPath.row].travel_image ?? "이미지 없음"
+            viewController.siteLabel = travelInfo.travel[indexPath.row].title
+            viewController.siteSubtitle = travelInfo.travel[indexPath.row].description ?? "설명 없음"
+            
             navigationController?.pushViewController(viewController, animated: true)
         } else {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
             let navigationView = UINavigationController(rootViewController: viewController)
+            
+            viewController.adDescription = adInfo
             
             navigationView.modalPresentationStyle = .fullScreen
             present(navigationView, animated: true)

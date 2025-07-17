@@ -28,4 +28,6 @@ class TravelInfoTableViewCell: UITableViewCell {
         travelImage.layer.cornerRadius = 10
         likeButton.tintColor = .white
     }
+    
+    
 }

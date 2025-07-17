@@ -11,6 +11,8 @@ class AdDetailViewController: UIViewController {
 
     @IBOutlet var adScriptLabel: UILabel!
     
+    var adDescription: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +20,7 @@ class AdDetailViewController: UIViewController {
     }
     
     func configure() {
+        adScriptLabel.text = adDescription
         adScriptLabel.font = .boldSystemFont(ofSize: 25)
         adScriptLabel.textAlignment = .center
         adScriptLabel.numberOfLines = 3
