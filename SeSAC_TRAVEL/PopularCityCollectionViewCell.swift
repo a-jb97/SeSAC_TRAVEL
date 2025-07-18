@@ -18,12 +18,12 @@ class PopularCityCollectionViewCell: UICollectionViewCell {
         
         cityImageView.clipsToBounds = true
         cityImageView.contentMode = .scaleAspectFill
-        cityImageView.layer.cornerRadius = cityImageView.frame.width / 2.5
+        cityImageView.layer.cornerRadius = cityImageView.frame.width / 1.8
         
         cityName.font = .boldSystemFont(ofSize: 17)
         cityName.textAlignment = .center
         
-        cityExplain.font = .systemFont(ofSize: 13)
+        cityExplain.font = .systemFont(ofSize: 15)
         cityExplain.textColor = .gray
         cityExplain.textAlignment = .center
     }

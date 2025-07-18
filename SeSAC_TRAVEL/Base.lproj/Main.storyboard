@@ -456,16 +456,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="13Y-1V-VeS">
-                                <rect key="frame" x="16" y="138" width="361" height="32"/>
-                                <segments>
-                                    <segment title="모두"/>
-                                    <segment title="국내"/>
-                                    <segment title="해외"/>
-                                </segments>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s6T-Pk-wJQ">
-                                <rect key="frame" x="16" y="185" width="361" height="550"/>
+                                <rect key="frame" x="8" y="185" width="377" height="550"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yCg-qq-t57">
                                     <size key="itemSize" width="128" height="128"/>
@@ -484,24 +476,48 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q0-E4-rv8">
+                                <rect key="frame" x="16" y="105" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="모두"/>
+                                <connections>
+                                    <action selector="filterAllButtonTapped:" destination="t1r-pb-bmA" eventType="touchUpInside" id="M0G-Qq-cfP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwZ-YT-lBf">
+                                <rect key="frame" x="323" y="105" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="해외"/>
+                                <connections>
+                                    <action selector="filterOverseasButtonTapped:" destination="t1r-pb-bmA" eventType="touchUpInside" id="M5J-I3-FdP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR1-Y9-DWP">
+                                <rect key="frame" x="169.66666666666666" y="105" width="54" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="국내"/>
+                                <connections>
+                                    <action selector="filterDomesticButtonTapped:" destination="t1r-pb-bmA" eventType="touchUpInside" id="LDa-u2-5Jn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g3S-ZV-MFI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="13Y-1V-VeS" secondAttribute="trailing" constant="16" id="1bI-pT-K50"/>
+                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="JwZ-YT-lBf" secondAttribute="trailing" constant="16" id="210-QC-6Kr"/>
+                            <constraint firstItem="8Q0-E4-rv8" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="BjE-za-M3m"/>
                             <constraint firstItem="s6T-Pk-wJQ" firstAttribute="bottom" secondItem="g3S-ZV-MFI" secondAttribute="bottom" id="Cpq-aj-k0q"/>
-                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="s6T-Pk-wJQ" secondAttribute="trailing" constant="16" id="Hqn-U0-cPQ"/>
-                            <constraint firstItem="13Y-1V-VeS" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="MNq-nu-Myw"/>
-                            <constraint firstItem="13Y-1V-VeS" firstAttribute="top" secondItem="g3S-ZV-MFI" secondAttribute="top" constant="20" id="UxA-Kc-Wa3"/>
-                            <constraint firstItem="13Y-1V-VeS" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="YUG-vV-yli"/>
-                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="YnI-jf-fpZ"/>
-                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="top" secondItem="13Y-1V-VeS" secondAttribute="bottom" constant="16" id="e6P-HO-r4V"/>
-                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="13Y-1V-VeS" secondAttribute="trailing" constant="16" id="vlM-yC-ct3"/>
+                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="s6T-Pk-wJQ" secondAttribute="trailing" constant="8" id="Hqn-U0-cPQ"/>
+                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="top" secondItem="8Q0-E4-rv8" secondAttribute="bottom" constant="45" id="LIX-zB-0s4"/>
+                            <constraint firstItem="JwZ-YT-lBf" firstAttribute="top" secondItem="Rgn-eE-xDH" secondAttribute="top" constant="105" id="SsW-dh-jbU"/>
+                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="8" id="YnI-jf-fpZ"/>
+                            <constraint firstItem="bR1-Y9-DWP" firstAttribute="top" secondItem="Rgn-eE-xDH" secondAttribute="top" constant="105" id="bni-pM-BUn"/>
+                            <constraint firstItem="8Q0-E4-rv8" firstAttribute="top" secondItem="Rgn-eE-xDH" secondAttribute="top" constant="105" id="esG-00-AGz"/>
+                            <constraint firstItem="bR1-Y9-DWP" firstAttribute="centerX" secondItem="Rgn-eE-xDH" secondAttribute="centerX" id="fwR-S1-wTf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="인기 도시" image="magnifyingglass.circle" catalog="system" id="vlV-w0-ZBt"/>
                     <connections>
-                        <outlet property="citySortSegment" destination="13Y-1V-VeS" id="MZu-Ir-5Sm"/>
                         <outlet property="popularCityCollectionView" destination="s6T-Pk-wJQ" id="Jze-tM-Pxy"/>
                     </connections>
                 </viewController>
