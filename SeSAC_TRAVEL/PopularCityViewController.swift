@@ -37,47 +37,57 @@ class PopularCityViewController: UIViewController, UICollectionViewDelegate, UIC
         popularCityCollectionView.collectionViewLayout = layout
     }
     
-    @IBAction func filterAllButtonTapped(_ sender: UIButton) {
-        let all = CityInfo().city
-        var filter: [City] = []
-        
-        for item in all {
-            filter.append(item)
-        }
-        
-        dump(filter)
-        city = filter
-        popularCityCollectionView.reloadData()
-    }
-    
-    @IBAction func filterDomesticButtonTapped(_ sender: UIButton) {
-        let domestic = CityInfo().city
-        var filter: [City] = []
-        
-        for item in domestic {
-            if item.domestic_travel == true {
+    @IBAction func domesticSegmentSelected(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            let all = CityInfo().city
+            var filter: [City] = []
+            
+            for item in all {
                 filter.append(item)
             }
-        }
-        
-        dump(filter)
-        city = filter
-        popularCityCollectionView.reloadData()
-    }
-    
-    @IBAction func filterOverseasButtonTapped(_ sender: UIButton) {
-        let overseas = CityInfo().city
-        var filter: [City] = []
-        
-        for item in overseas {
-            if item.domestic_travel == false {
+            
+            dump(filter)
+            city = filter
+            popularCityCollectionView.reloadData()
+        case 1:
+            let domestic = CityInfo().city
+            var filter: [City] = []
+            
+            for item in domestic {
+                if item.domestic_travel == true {
+                    filter.append(item)
+                }
+            }
+            
+            dump(filter)
+            city = filter
+            popularCityCollectionView.reloadData()
+        case 2:
+            let overseas = CityInfo().city
+            var filter: [City] = []
+            
+            for item in overseas {
+                if item.domestic_travel == false {
+                    filter.append(item)
+                }
+            }
+            
+            dump(filter)
+            city = filter
+            popularCityCollectionView.reloadData()
+        default:
+            let all = CityInfo().city
+            var filter: [City] = []
+            
+            for item in all {
                 filter.append(item)
             }
+            
+            dump(filter)
+            city = filter
+            popularCityCollectionView.reloadData()
         }
-        
-        dump(filter)
-        city = filter
-        popularCityCollectionView.reloadData()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

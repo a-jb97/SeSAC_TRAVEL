@@ -11,6 +11,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="RsK-gl-LHp">
+            <objects>
+                <navigationController id="Qwr-hq-O4O" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="0uY-S9-8Ml"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zSQ-eg-l3Y">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Dyr-d4-3ea" kind="relationship" relationship="rootViewController" id="YD5-7g-iul"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rVv-pN-9Ch" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33" y="-340"/>
+        </scene>
         <!--Title-->
         <scene sceneID="DQ8-a0-sUu">
             <objects>
@@ -19,16 +36,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="8cj-aP-I0k">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="SeSAC TRAVEL" id="mQe-83-tF1"/>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="travelCell" rowHeight="480" id="ob1-xZ-qkN" customClass="TravelTableViewCell" customModule="SeSAC_TRAVEL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="94" width="393" height="480"/>
+                                <rect key="frame" x="0.0" y="50" width="393" height="480"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ob1-xZ-qkN" id="EMg-DR-2jm">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="480"/>
@@ -95,7 +105,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lUw-hQ-4e9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-31.343283582089551" y="-340.50343249427914"/>
+            <point key="canvasLocation" x="876" y="-340"/>
         </scene>
         <!--3.6.9-->
         <scene sceneID="gdW-Bk-6rK">
@@ -191,7 +201,7 @@
             </objects>
             <point key="canvasLocation" x="-31.343283582089551" y="333.63844393592677"/>
         </scene>
-        <!--도시 상세 정보-->
+        <!--도시 정보-->
         <scene sceneID="OEY-CV-Azd">
             <objects>
                 <tableViewController storyboardIdentifier="TravelInfoTableViewController" id="6B4-Hn-E5D" customClass="TravelInfoTableViewController" customModule="SeSAC_TRAVEL" customModuleProvider="target" sceneMemberID="viewController">
@@ -308,7 +318,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="도시 정보" image="info.circle" catalog="system" id="d7X-UV-SF2"/>
-                    <navigationItem key="navigationItem" title="도시 상세 정보" id="98i-HU-PDP"/>
+                    <navigationItem key="navigationItem" id="98i-HU-PDP"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FNo-Kb-k7l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -448,6 +458,23 @@
             </objects>
             <point key="canvasLocation" x="-33" y="1013"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="0mC-NX-C2Z">
+            <objects>
+                <navigationController id="ygG-Ma-3Vl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="CXV-Nu-JIj"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JgG-vH-Fuh">
+                        <rect key="frame" x="0.0" y="118" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="t1r-pb-bmA" kind="relationship" relationship="rootViewController" id="gMM-sx-myP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Raq-ED-SWU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-33" y="1697"/>
+        </scene>
         <!--인기 도시-->
         <scene sceneID="Gk6-9o-I13">
             <objects>
@@ -457,7 +484,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="s6T-Pk-wJQ">
-                                <rect key="frame" x="8" y="185" width="377" height="550"/>
+                                <rect key="frame" x="8" y="212" width="377" height="523"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yCg-qq-t57">
                                     <size key="itemSize" width="128" height="128"/>
@@ -476,54 +503,42 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Q0-E4-rv8">
-                                <rect key="frame" x="16" y="105" width="54" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="모두"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2ct-Nc-bPn">
+                                <rect key="frame" x="8" y="178" width="377" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dcm-Ie-VIW"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
                                 <connections>
-                                    <action selector="filterAllButtonTapped:" destination="t1r-pb-bmA" eventType="touchUpInside" id="M0G-Qq-cfP"/>
+                                    <action selector="domesticSegmentSelected:" destination="t1r-pb-bmA" eventType="valueChanged" id="gIB-Wc-sON"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwZ-YT-lBf">
-                                <rect key="frame" x="323" y="105" width="54" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="해외"/>
-                                <connections>
-                                    <action selector="filterOverseasButtonTapped:" destination="t1r-pb-bmA" eventType="touchUpInside" id="M5J-I3-FdP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR1-Y9-DWP">
-                                <rect key="frame" x="169.66666666666666" y="105" width="54" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="국내"/>
-                                <connections>
-                                    <action selector="filterDomesticButtonTapped:" destination="t1r-pb-bmA" eventType="touchUpInside" id="LDa-u2-5Jn"/>
-                                </connections>
-                            </button>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="g3S-ZV-MFI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="JwZ-YT-lBf" secondAttribute="trailing" constant="16" id="210-QC-6Kr"/>
-                            <constraint firstItem="8Q0-E4-rv8" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="16" id="BjE-za-M3m"/>
+                            <constraint firstItem="2ct-Nc-bPn" firstAttribute="top" secondItem="g3S-ZV-MFI" secondAttribute="top" constant="16" id="4fG-1q-F0h"/>
+                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="top" secondItem="2ct-Nc-bPn" secondAttribute="bottom" constant="4" id="AzW-OE-IgH"/>
                             <constraint firstItem="s6T-Pk-wJQ" firstAttribute="bottom" secondItem="g3S-ZV-MFI" secondAttribute="bottom" id="Cpq-aj-k0q"/>
                             <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="s6T-Pk-wJQ" secondAttribute="trailing" constant="8" id="Hqn-U0-cPQ"/>
-                            <constraint firstItem="s6T-Pk-wJQ" firstAttribute="top" secondItem="8Q0-E4-rv8" secondAttribute="bottom" constant="45" id="LIX-zB-0s4"/>
-                            <constraint firstItem="JwZ-YT-lBf" firstAttribute="top" secondItem="Rgn-eE-xDH" secondAttribute="top" constant="105" id="SsW-dh-jbU"/>
+                            <constraint firstItem="g3S-ZV-MFI" firstAttribute="trailing" secondItem="2ct-Nc-bPn" secondAttribute="trailing" constant="8" id="Py8-Ri-bHg"/>
+                            <constraint firstItem="2ct-Nc-bPn" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="8" id="WBH-zR-VKj"/>
                             <constraint firstItem="s6T-Pk-wJQ" firstAttribute="leading" secondItem="g3S-ZV-MFI" secondAttribute="leading" constant="8" id="YnI-jf-fpZ"/>
-                            <constraint firstItem="bR1-Y9-DWP" firstAttribute="top" secondItem="Rgn-eE-xDH" secondAttribute="top" constant="105" id="bni-pM-BUn"/>
-                            <constraint firstItem="8Q0-E4-rv8" firstAttribute="top" secondItem="Rgn-eE-xDH" secondAttribute="top" constant="105" id="esG-00-AGz"/>
-                            <constraint firstItem="bR1-Y9-DWP" firstAttribute="centerX" secondItem="Rgn-eE-xDH" secondAttribute="centerX" id="fwR-S1-wTf"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="인기 도시" image="magnifyingglass.circle" catalog="system" id="vlV-w0-ZBt"/>
+                    <navigationItem key="navigationItem" id="WpD-NZ-JZb"/>
                     <connections>
                         <outlet property="popularCityCollectionView" destination="s6T-Pk-wJQ" id="Jze-tM-Pxy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eed-ig-Lbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-34.351145038167935" y="1704.9295774647887"/>
+            <point key="canvasLocation" x="876" y="1696"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IWo-vj-SBu">
@@ -536,10 +551,10 @@
                         <color key="selectedImageTintColor" name="AccentColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Dyr-d4-3ea" kind="relationship" relationship="viewControllers" id="XNp-UG-LiP"/>
-                        <segue destination="pbF-gq-b1M" kind="relationship" relationship="viewControllers" id="lra-CO-aMU"/>
+                        <segue destination="Qwr-hq-O4O" kind="relationship" relationship="viewControllers" id="zeI-QS-7kn"/>
                         <segue destination="W4l-RA-Nsa" kind="relationship" relationship="viewControllers" id="tip-me-5Rz"/>
-                        <segue destination="t1r-pb-bmA" kind="relationship" relationship="viewControllers" id="NeG-yh-Ka7"/>
+                        <segue destination="pbF-gq-b1M" kind="relationship" relationship="viewControllers" id="lra-CO-aMU"/>
+                        <segue destination="ygG-Ma-3Vl" kind="relationship" relationship="viewControllers" id="32O-Uf-d0a"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ib2-pS-LDk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
